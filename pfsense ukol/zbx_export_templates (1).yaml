@@ -6,7 +6,7 @@ zabbix_export:
   templates:
     - uuid: aab4f7c211174ced8b93de7db9f9638a
       template: 'Template PFSense by SNMP'
-      name: 'Template PFSense by SNMP'
+      name: 'templatík'
       templates:
         - name: 'PFSense by SNMP'
       groups:
