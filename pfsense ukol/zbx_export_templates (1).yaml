@@ -1,0 +1,68 @@
+zabbix_export:
+  version: '7.0'
+  template_groups:
+    - uuid: 7df96b18c230490a9a0a9e2307226338
+      name: Templates
+  templates:
+    - uuid: aab4f7c211174ced8b93de7db9f9638a
+      template: 'Template PFSense by SNMP'
+      name: 'templatík'
+      templates:
+        - name: 'PFSense by SNMP'
+      groups:
+        - name: Templates
+      dashboards:
+        - uuid: b56844fe067141b1af2a903d945b96df
+          name: 'nový dashik'
+          pages:
+            - widgets:
+                - type: graph
+                  name: blabla
+                  x: '2'
+                  width: '36'
+                  height: '5'
+                  fields:
+                    - type: GRAPH
+                      name: graphid.0
+                      value:
+                        host: 'Template PFSense by SNMP'
+                        name: kaficko
+                    - type: STRING
+                      name: reference
+                      value: LFSVK
+                    - type: INTEGER
+                      name: rf_rate
+                      value: '60'
+                - type: graph
+                  name: 'nový grafik'
+                  x: '40'
+                  width: '32'
+                  height: '5'
+                  fields:
+                    - type: GRAPH
+                      name: graphid.0
+                      value:
+                        host: 'Template PFSense by SNMP'
+                        name: 'nový grafik'
+                    - type: STRING
+                      name: reference
+                      value: AZWFU
+  graphs:
+    - uuid: 5ec79be9e83d48faa008986b6a045434
+      name: kaficko
+      graph_items:
+        - drawtype: GRADIENT_LINE
+          color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'Template PFSense by SNMP'
+            key: pfsense.state.table.pused
+    - uuid: 43322c15d45747499171fe7699d337df
+      name: 'nový grafik'
+      graph_items:
+        - drawtype: DOTTED_LINE
+          color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'Template PFSense by SNMP'
+            key: 'zabbix[host,snmp,available]'
